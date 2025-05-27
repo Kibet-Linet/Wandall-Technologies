@@ -1,13 +1,17 @@
+/* Navbar Container */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(3, 2, 39, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 18px;
-  margin-top: 40px;
-  height: 60px;
-  color: #000;
-  position: relative;
-  z-index: 100;
+  z-index: 1000;
 }
 
 /* Logo */
@@ -15,53 +19,42 @@
   display: flex;
   align-items: center;
 }
-
 .logo {
   width: 60px;
   height: 60px;
-  border-radius: 1000px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/* Title */
-
-.navbar-title {
-  font-size: 26px;
-  font-weight: bold;
-  margin-left: -20px;
-  margin-right: 60px;
-}
-
-/* Hamburger Icon (Only visible on small screens) */
+/* Hamburger Icon */
 .navbar-hamburger {
   font-size: 40px;
   cursor: pointer;
   display: block;
-  z-index: 1100;
+  z-index: 1200;
+  color: white;
 }
 
-/* Side Menu for small screens */
+/* Slide-out Menu */
 .navbar-menu {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 250px;
+  width: 300px;
   height: 100vh;
   background: white;
-  padding: 60px 20px 20px 20px;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  padding: 60px 20px 20px;
+  transition: right 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 1000;
+  z-index: 1200;
 }
-
 .navbar-menu.open {
   right: 0;
 }
 
-/* Close (X) Icon inside dropdown */
+/* Close Button */
 .close-icon {
   position: absolute;
   top: 10px;
@@ -71,50 +64,37 @@
   color: black;
 }
 
-/* Menu Links */
+/* Nav Links - Mobile */
 .navbar-menu a {
-  color: #000;
+  color: black;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 500;
 }
-
 .navbar-menu a:hover {
   color: rgb(255, 60, 0);
 }
-.contact-nav{
-  background-color: rgba(3, 2, 39, 0.9) ;
-  color: white;
-  text-align: center;
-  width: 100%px;
-  height: 30px;
-  margin-bottom: -20px;
-  font-size: 20px;
-}
 
-/* Desktop styles */
+/* Desktop Styles */
 @media screen and (min-width: 768px) {
-  .navbar {
-    justify-content: space-between;
-  }
-
   .navbar-hamburger {
     display: none;
   }
 
   .navbar-menu {
     position: static;
+    flex-direction: row;
     height: auto;
     width: auto;
     background: transparent;
+    padding: 50px;
     box-shadow: none;
-    flex-direction: row;
-    padding: 0;
-    gap: 20px;
   }
 
   .navbar-menu a {
-    color: #000;
+    color: white; /* 👈 white links for larger screens */
+    font-weight: 600;
+    font-size:18px ;
   }
 
   .navbar-menu a:hover {

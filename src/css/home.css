@@ -1,71 +1,131 @@
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --background-color: #ffffff;
+  --default-color: #666666;
+  --heading-color: #333333;
+  --accent-color: rgb(255, 60, 0);
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  --section-gap: 40px;
+}
+
+/* Smooth Entry Animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Layout */
+body {
+  font-family: var(--default-font);
+  background-color: var(--background-color);
+  color: var(--default-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
 .intro {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  gap: 40px;
-
+  gap: var(--section-gap);
+  padding: var(--section-gap) 50px;
+  height: 600px;
+  flex-wrap: wrap;
+  background-color: rgba(3, 2, 39, 0.9); /* Matches navbar background */
 }
 
-/* Text section */
 .intro-text {
   flex: 1;
   max-width: 600px;
-  color: #333;
+  color: white; /* Ensures text is white */
 }
 
 .intro-text h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #000;
+  font-size: 48px;
+  font-family: var(--heading-font);
+  color: white;
 }
 
 .intro-text h3 {
   font-size: 28px;
-  color: rgb(255, 60, 0);
   margin-bottom: 15px;
+  color: white;
 }
 
 .intro-text p {
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 12px;
-}
-.p{
-    background-color: rgb(255, 60, 0);
-    color: white;
-    width: 300px;
-    height: 40px ;
-    
+  color: white;
 }
 
-/* Image section */
+
+.p, .three-cubes .p, .bandwidth .p, .starlink .p, .battery .p {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  width: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.p:hover {
+  background-color: #cc2e00;
+}
+
 .construction-image img {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   object-fit: cover;
 }
+
+/* Three Cubes Section */
 .three-cubes-container {
   display: flex;
-  justify-content: center; /* Center cubes */
-  gap: 30px; /* Add consistent spacing between cubes */
-  padding: 40px 20px;
-  flex-wrap: wrap; /* For responsiveness */
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: var(--section-gap) 20px;
 }
 
 .three-cubes {
   width: 350px;
   min-height: 350px;
-  text-align: center;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Box shadow */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensure space for "Learn more" */
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  background-color: var(--surface-color);
 }
+
 
 .three-cubes img {
   width: 80px;
@@ -77,137 +137,93 @@
   padding: 10px;
 }
 
-/* Align Learn More button */
-.three-cubes .p {
-  background-color: rgb(255, 60, 0);
-  color: white;
-  width: fit-content;
-  padding: 10px 20px;
-  margin: 0 auto;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.bandwidth {
-  background-color: rgba(240, 206, 133, 0.9);
+/* Section Blocks (Bandwidth, Starlink, Battery) */
+.bandwidth, .starlink, .battery {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  gap: 40px;
-  flex-wrap: wrap; /* helps responsiveness */
-  text-align: left;
+  gap: var(--section-gap);
+  padding: var(--section-gap) 20px;
+  flex-wrap: wrap;
+  background-color: var(--surface-color);
 }
 
-.bandwidth > div {
+.bandwidth > div, .starlink > div, .battery > div {
   flex: 1;
   max-width: 600px;
 }
 
-.bandwidth h1 {
-  font-size: 28px;
+.bandwidth h1, .starlink h1, .battery h1 {
+  font-size: 32px;
+  color: var(--heading-color);
   margin-bottom: 15px;
+  font-family: var(--heading-font);
 }
 
-.bandwidth p {
+.bandwidth p, .starlink p, .battery p {
   font-size: 18px;
-  margin-bottom: 10px;
+  color: var(--default-color);
 }
 
-.bandwidth .p {
-  background-color: rgb(255, 60, 0);
-  color: white;
-  width: fit-content;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.bandwidth .construction-image img {
-  max-width: 600px;;
-  height: 350px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.starlink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  gap: 40px;
-  flex-wrap: wrap; /* helps responsiveness */
-  text-align: left;
-}
-
-.starlink > div {
-  flex: 1;
-  max-width: 600px;
-}
-
-.starlink h1 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.starlink p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.starlink .p {
-  color: white;
-  width: fit-content;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Outer gray box with shadow */
+/* Gray Shadow Box */
 .outer-box {
-  background-color: #666666;
-  padding: 15px; /* space for inner box */
+  background-color: var(--default-color);
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: inline-block; /* fits to content */
 }
 
-/* Inner white box */
 .inner-box {
-  background-color: white;
+  background-color: var(--surface-color);
   padding: 10px;
   border-radius: 8px;
 }
 
-/* Image */
 .inner-box img {
-  width: 500px; /* or 100% if you want full width inside box */
+  width: 100%;
+  max-width: 500px;
   height: 300px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-/* Responsive behavior */
+/* Contact Section */
+.contacts {
+  padding: var(--section-gap) 10%;
+  text-align: center;
+}
+
+.contacts h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.contacts p {
+  font-size: 16px;
+  color: var(--default-color);
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10%;
+  font-size: 14px;
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
   .intro {
     flex-direction: column;
-    align-items: flex-start;
   }
-  .three-cubes-container{
+
+  .three-cubes-container {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .construction-image img {
-    width: 100%;
     max-width: 300px;
   }
 }
