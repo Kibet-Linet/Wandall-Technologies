@@ -47,10 +47,161 @@
   border-radius: 8px;
   object-fit: cover;
 }
+.three-cubes-container {
+  display: flex;
+  justify-content: center; /* Center cubes */
+  gap: 30px; /* Add consistent spacing between cubes */
+  padding: 40px 20px;
+  flex-wrap: wrap; /* For responsiveness */
+}
+
+.three-cubes {
+  width: 350px;
+  min-height: 350px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Box shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure space for "Learn more" */
+  border-radius: 8px;
+}
+
+.three-cubes img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+  background-color: rgba(240, 206, 133, 0.9);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Align Learn More button */
+.three-cubes .p {
+  background-color: rgb(255, 60, 0);
+  color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bandwidth {
+  background-color: rgba(240, 206, 133, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 40px;
+  flex-wrap: wrap; /* helps responsiveness */
+  text-align: left;
+}
+
+.bandwidth > div {
+  flex: 1;
+  max-width: 600px;
+}
+
+.bandwidth h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.bandwidth p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.bandwidth .p {
+  background-color: rgb(255, 60, 0);
+  color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bandwidth .construction-image img {
+  max-width: 600px;;
+  height: 350px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.starlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 40px;
+  flex-wrap: wrap; /* helps responsiveness */
+  text-align: left;
+}
+
+.starlink > div {
+  flex: 1;
+  max-width: 600px;
+}
+
+.starlink h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.starlink p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.starlink .p {
+  color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Outer gray box with shadow */
+.outer-box {
+  background-color: #666666;
+  padding: 15px; /* space for inner box */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: inline-block; /* fits to content */
+}
+
+/* Inner white box */
+.inner-box {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Image */
+.inner-box img {
+  width: 500px; /* or 100% if you want full width inside box */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 /* Responsive behavior */
 @media screen and (max-width: 768px) {
   .intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .three-cubes-container{
     flex-direction: column;
     align-items: flex-start;
   }
