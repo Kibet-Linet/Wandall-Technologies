@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/home.css';
 import construction from '../assets/construction-img.jpg';
 import wifi from '../assets/wifi-icon-people.jpg';
@@ -9,6 +10,8 @@ import starlink from '../assets/starlink.jpg';
 import battery from "../assets/battery.jpg";
 
 function Home() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -25,6 +28,10 @@ function Home() {
     hiddenElements.forEach(el => observer.observe(el));
   }, []);
 
+   const handleNavigate = (path) => () => {
+    navigate(path);
+  };
+
   return (
     <>
       <section className="intro section">
@@ -39,25 +46,28 @@ function Home() {
         </div>
       </section>
 
-      <section className='three-cubes-container section'>
-        {[
+       <section className='three-cubes-container section'>
+        {[ 
           {
             img: wifi,
             title: 'Home/Business Internet Plans',
-            text: 'Providing Affordable High-speed wifi solutions for your households or businesses.'
+            text: 'Providing Affordable High-speed wifi solutions for your households or businesses.',
+            link: '/internet-plans'
           },
           {
             img: cybersecurity,
             title: 'Cybersecurity',
-            text: 'Unified platform combining CCTV, biometric data, and security measures.'
+            text: 'Unified platform combining CCTV, biometric data, and security measures.',
+            link: '/cyber-security'
           },
           {
             img: greenpower,
             title: 'Green-Power solutions',
-            text: 'Solar and generator solutions for homes and businesses.'
+            text: 'Solar and generator solutions for homes and businesses.',
+            link: '/green-power'
           }
         ].map((item, idx) => (
-          <div className='three-cubes' key={idx}>
+          <div className='three-cubes' key={idx} onClick={handleNavigate(item.link)} style={{ cursor: 'pointer' }}>
             <img src={item.img} alt={item.title} className="logo" />
             <h1>{item.title}</h1>
             <p>{item.text}</p>

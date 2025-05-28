@@ -1,0 +1,15 @@
+.cyber-security-img{
+    width: 900px;
+    height: 900px;
+}
+.p-brothers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+     
+}
+
+.ready-cybersecurity{
+    text-align: center;
+}

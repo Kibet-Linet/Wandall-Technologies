@@ -93,6 +93,7 @@ body {
   width: fit-content;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 10px ;
 }
 
 .p:hover {
@@ -130,10 +131,7 @@ body {
 .three-cubes img {
   width: 80px;
   height: 80px;
-  object-fit: contain;
   margin: 0 auto 15px;
-  background-color: rgba(240, 206, 133, 0.9);
-  border-radius: 50%;
   padding: 10px;
 }
 
