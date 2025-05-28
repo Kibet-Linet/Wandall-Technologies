@@ -44,6 +44,7 @@ function CyberSecurity(){
                         <img src={item.img} alt={item.title} className="cyber-security-img" />
                         <h1>{item.title}</h1>
                         <p>{item.text}</p>
+                        <p className='p'>Learn more</p>
                       </div>
                     ))}
         </section>

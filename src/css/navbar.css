@@ -1,4 +1,4 @@
-/* Navbar Container */
+Navbar Container
 .navbar {
   position: fixed;
   top: 0;
@@ -74,6 +74,9 @@
 .navbar-menu a:hover {
   color: rgb(255, 60, 0);
 }
+.navbar-menu a.active {
+  color: rgb(255, 60, 0);
+}
 
 /* Desktop Styles */
 @media screen and (min-width: 768px) {
@@ -90,6 +93,8 @@
     padding: 50px;
     box-shadow: none;
   }
+/* Active NavLink */
+
 
   .navbar-menu a {
     color: white; /* 👈 white links for larger screens */
@@ -97,7 +102,7 @@
     font-size:18px ;
   }
 
-  .navbar-menu a:hover {
+  .navbar-menu a:hover,.nav-link.active {
     color: rgb(255, 60, 0);
   }
 
