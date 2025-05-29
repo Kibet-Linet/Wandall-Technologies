@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import worldcircuit from '../assets/world-circuit.jpg'
 import biometric from '../assets/biometric.jpg'
 import cctv from '../assets/cctv.jpg'
@@ -57,13 +59,14 @@ function CyberSecurity(){
           <div>
             <h1>Advanced Protection for the Digital Age</h1>
             <p>Our cybersecurity solutions employ cutting-edge technologies to protect against the most sophisticated cyber threats. From small businesses to large enterprises, we provide tailored security measures to keep your data safe.</p>
-            <ul>
-              <li>24/7 Security Monitoring</li>
-              <li>Data Encryption Services</li>
-              <li>Vulnerability Assessment</li>
-              <li>Incident Response Planning</li>
-              <li>Employee Security Training</li>
+            <ul className="custom-icon-list">
+              <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> 24/7 Security Monitoring</li>
+              <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Data Encryption Services</li>
+              <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Vulnerability Assessment</li>
+              <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Incident Response Planning</li>
+              <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Employee Security Training</li>
             </ul>
+
             <p className='p'>Request a Security Audit</p>
           </div>
         </section>

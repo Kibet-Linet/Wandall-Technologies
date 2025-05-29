@@ -92,8 +92,23 @@ body {
 
 .explore {
   font-weight: bold;
-  color: #a0ffae;
+  color: rgb(255, 60, 0);
   cursor: pointer;
+}
+
+.explore:hover{
+  color: rgb(187, 45, 2);
+}
+
+.intro-green-section{
+  background-color:rgb(13, 71, 11) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--section-gap);
+  padding: var(--section-gap) 50px;
+  flex-wrap: wrap;
+  color: white;
 }
 
 /* ===============================
@@ -137,9 +152,8 @@ body {
 }
 
 .three-cube, .three-cubes {
-  flex: 1 1 300px;
-  max-width: 350px;
-  min-height: 350px;
+  height: 450px;
+  width: 350px;
   background-color: var(--surface-color);
   padding: 20px;
   border-radius: 12px;
@@ -148,8 +162,8 @@ body {
 }
 
 .three-cube img, .three-cubes img {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 15px;
   padding: 10px;
 }
@@ -160,7 +174,6 @@ body {
 .battery, .starlink, .bandwidth, .things {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: var(--section-gap) 20px;
@@ -173,8 +186,6 @@ body {
 .generator {
   flex: 1;
   min-width: 300px;
-  max-width: 600px;
-  background-color: #f2f2f2;
   padding: 20px;
   border-radius: 12px;
 }
@@ -292,13 +303,31 @@ footer {
   text-align: center;
 }
 
+.custom-icon-list {
+  list-style: none;       /* Removes dots */
+  padding-left: 0;        /* Removes indent */
+  margin: 0;
+}
+
+.custom-icon-list li {
+  display: flex;          /* Places icon and text in a row */
+  align-items: center;    /* Vertically centers them */
+  margin-bottom: 0.5rem;
+}
+
+.tick-icon {
+  color: rgb(255, 60, 0);          /* Your preferred icon color */
+  margin-right: 8px;      /* Space between icon and text */
+  font-size: 1rem;        /* Adjust size if needed */
+}
+
 /* ===============================
    11. RESPONSIVE STYLES
 =============================== */
 @media screen and (max-width: 768px) {
   .intro, .intro-solar,
   .battery, .starlink, .bandwidth,
-  .things, .three-cubes-container {
+  .things, .three-cubes-container ,.intro-green-section {
     flex-direction: column;
     text-align: center;
   }

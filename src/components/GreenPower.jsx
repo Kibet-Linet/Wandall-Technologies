@@ -1,4 +1,5 @@
-import solar from '../assets/solar.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';import solar from '../assets/solar.jpg';
 import panel from '../assets/panel.jpg';
 import storage from '../assets/storage.jpg';
 import sunpanel from '../assets/sunpanel.jpg';
@@ -10,7 +11,7 @@ import '../css/greenpower.css';
 function GreenPower() {
   return (
     <>
-      <section className="intro-solar section">
+      <section className="intro-green-section">
         <div className="text-solar">
           <p className="tagline">Sustainable Energy Solutions</p>
           <h1>Powering Tomorrow with Green Energy</h1>
@@ -66,12 +67,12 @@ function GreenPower() {
             Our green power solutions ensure continuous connectivity even in areas with unreliable grid power.
             Perfect for remote locations, emergencies, or reducing your dependence on conventional energy sources.
           </p>
-          <ul>
-            <li>Backup power for WiFi and network infrastructure</li>
-            <li>Off-grid solutions for remote locations</li>
-            <li>Reduced electricity costs through solar power</li>
-            <li>Lower carbon footprint and environmental impact</li>
-            <li>Smart energy management systems</li>
+          <ul className='custom-icon-list'>
+            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Backup power for WiFi and network infrastructure</li>
+            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Off-grid solutions for remote locations</li>
+            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Reduced electricity costs through solar power</li>
+            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Lower carbon footprint and environmental impact</li>
+            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Smart energy management systems</li>
           </ul>
           <p className="explore">Request an Energy Assessment</p>
         </div>
@@ -96,8 +97,8 @@ function GreenPower() {
             <img src={item.img} alt={item.title} />
             <h2>{item.title}</h2>
             <p>{item.text}</p>
-            <ul>
-              {item.list.map((li, i) => <li key={i}>{li}</li>)}
+            <ul className='custom-icon-list' >
+              {item.list.map((li, i) => <li key={i}><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />{li}</li>)}
             </ul>
             <p className="explore">Explore this Solution</p>
           </div>
