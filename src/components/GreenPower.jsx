@@ -104,6 +104,45 @@ function GreenPower() {
           </div>
         ))}
       </section>
+
+
+      <section className='benefits-section'>
+           <h1>Benefits of Green Power</h1>
+           <div className='benefits-container'>
+              <div className='benefits-text'>
+                <img/>
+                <h2>Cost Savings</h2>
+                <p>Significantly reduce your electricity bills with self-generated clean energy.</p>
+              </div>
+
+               <div className='benefits-text'>
+                <img/>
+                <h2>Reliability</h2>
+                <p>Maintain connectivity during grid outages with independent power systems.</p>
+              </div>
+
+               <div className='benefits-text'>
+                <img/>
+                <h2>Sustainability</h2>
+                <p>Reduce your carbon footprint and contribute to a cleaner environment.</p>
+              </div>
+
+               <div className='benefits-text'>
+                <img/>
+                <h2>Value Addition</h2>
+                <p>Increase property value and enhance your brand's environmental credentials.</p>
+              </div>
+           </div>
+      </section>
+
+      <section className='green-ready'>
+        <h1>Ready to Embrace Green Power?</h1>
+        <p>Join Wandall Technologies LTD in our mission to create a sustainable future through innovative green power solutions.</p>
+        <div  className='explore-green'>
+          <p>Schedule a Consultation</p>
+          <p>Download Green Energy Guide</p>
+        </div>
+      </section>
     </>
   );
 }
