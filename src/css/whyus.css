@@ -35,14 +35,157 @@
 .whyus-img{
   background-color: rgb(255, 60, 0);
 }
+
+.whyus-approach {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: var(--section-gap);
+  padding: var(--section-gap) 50px;
+}
+
+.approach-container {
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  width: 550px;
+  height: 450px;
+}
+.approach-container img{
+  width: 300px;
+  height: 200px;
+}
+.titless {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.number {
+  border-radius: 3000px;
+  background-color: rgb(255, 60, 0);
+  color: white;
+  padding: 5px 12px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.commitment-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--section-gap);
+  padding: var(--section-gap) 50px;
+  background-color: black;
+  color: white;
+  
+}
+.smol-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 8px;
+}
+
+.profile-pic {
+  background-color: rgb(255, 60, 0);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.profile-info h1 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.profile-info h2 {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
+
+.profile-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: var(--section-gap) 20px;
+}
+
+.clients-container {
+  width: 350px;
+  background-color: var(--surface-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.testimonial-text {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .whyus-intro-container{
     flex-direction: column;
     text-align: center;
   }
-
+  .commitment-section{
+    flex-direction: column;
+    text-align: center;
+  }
+  .clients-container{
+    flex-direction: column;
+    text-align: center;
+  }
   .construction-image img,
   .inner-box img {
     max-width: 300px;
+  }
+
+  .whyus-approach {
+    grid-template-columns: 1fr; /* 1 column */
+    padding: var(--section-gap) 20px;
+  }
+
+  .titless {
+    flex-direction: column;
+    gap: 5px;
+  }
+    .clients-container {
+    width: 350px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-info h1 {
+    font-size: 15px;
+  }
+
+  .profile-info h2 {
+    font-size: 13px;
+  }
+
+  .testimonial-text,
+  .explore {
+    text-align: center;
   }
 }

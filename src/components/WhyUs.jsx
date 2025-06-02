@@ -1,13 +1,21 @@
 import '../css/whyus.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import greet from '../assets/greet.jpg'
 import world from '../assets/world.jpg'
 import kawifi from '../assets/kawifi.jpg'
 import support from '../assets/support.jpg'
 import virus from '../assets/virus.jpg'
+import board from '../assets/board.jpg'
+import construction from '../assets/construction.jpg'
+import handshake from '../assets/handshake.jpg'
+import wires from '../assets/wires.jpg'
+import wifipeople from '../assets/wifi-icon-people.jpg'
+
 function WhyUs(){
     return(
         <>
-         <section className="whyus-intro-container">
+          <section className="whyus-intro-container">
              <div className="whyus-intro">
                 <p>Our Commitment To Excellence</p>
                 <h1>Why Choose Wandall Technologies?</h1>
@@ -17,10 +25,10 @@ function WhyUs(){
              <div>
                 <img src={greet} className='construction-image'/>
              </div>
-         </section>
+          </section>
 
 
-         <section className='battery section'>
+          <section className='battery section'>
               <div>
                 <img src={world} className='battery-image'/>
               </div>
@@ -30,39 +38,146 @@ function WhyUs(){
                  <p>At Wandall Technologies LTD, we envision a world where connectivity is seamless, reliable, and accessible to all. We're committed to bridging digital divides and empowering communities through innovative connectivity solutions.</p>
                  <p className='explore'>Learn About Our Mission</p>
               </div>
-         </section>
+          </section>
 
-           <h1 className="section-title">Key Advantages</h1>
-            <section className="three-cubes-container section">
-                 {[
-                   {
+
+          <h1 className="section-title">Key Advantages</h1>
+          <section className="three-cubes-container section">
+            {[
+              {
                      img: kawifi,
                      title: 'Expert Team',
                      text: 'Our team of experienced professionals brings decades of combined expertise in telecommunications, networking, and information technology.',
-                   },
-                   {
+              },
+
+              {
                      img: virus,
                      title: 'Cutting-Edge Technology',
                      text: 'We utilize the latest and most advanced technologies to ensure our clients always have access to state-of-the-art connectivity solutions.',
-                   },
-                   {
+              },
+
+              {
                      img: support,
-                     title: 'Green Energy Consultation',
+                     title: '24/7 Support',
                      text: 'Our dedicated support team is available around the clock to ensure your connectivity is always functioning at optimal levels.',
-                   },
-                 ].map((item, idx) => (
+              },
+              ].map((item, idx) => (
                    <div className="three-cube" key={idx}>
                      <img src={item.img} alt={item.title} />
                      <h2>{item.title}</h2>
                      <p>{item.text}</p>
                    </div>
-                 ))}
-            </section>
+            ))}
+          </section>
+
+          <h1 className="section-title">Our Approach</h1>
+          <section className='whyus-approach'>
+            <div className='approach-container'>
+              <div className='titless'>
+                <h1 className='number'>1</h1>    
+                <h1>Uniqueness</h1>
+              </div>
+              <div>
+                <p>We're the only provider in the region offering a unique service. What is unique? Well we do what is called a system fail-over where we use multiple networks to prevent any internet interruptions</p>
+                <img src={board}/>
+              </div>
+            </div>
+            <div className='approach-container'>
+              <div className='titless'>
+                <h1 className='number'>2</h1>    
+                <h1>Customized Solution Design</h1>
+              </div>
+              <div>
+                <p>Choose us for a partner that's constantly evolving. For the partnerships we form as we go and the technological advancements like green power solutions and cyber security focusing on scalability and future needs.</p>
+                <img src={handshake}/>
+              </div>
+            </div>
+            <div className='approach-container'>
+              <div className='titless'>
+                <h1 className='number'>3</h1>    
+                <h1>Professional Implementation</h1>
+              </div>
+              <div>
+                <p>Our certified technicians handle every aspect of installation and configuration with precision and attention to detail, ensuring minimal disruption to your operations.</p>
+                <img src={construction}/>
+              </div>
+            </div>
+            <div className='approach-container'>
+              <div className='titless'>
+                <h1 className='number'>4</h1>    
+                <h1>Proactive Monitoring & Support</h1>
+              </div>
+              <div>
+                <p>We continuously monitor your connectivity infrastructure, identifying and resolving potential issues before they impact your operations, with responsive support whenever you need it.</p>
+                <img src={wires}/>
+              </div>
+            </div>
+          </section>
 
 
-            <section>
-                
-            </section>
+          <section className='commitment-section'>
+            <div className='commitment-container'>
+              <h1>Our Commitment to Excellence</h1>
+              <p>Wandall Technologies LTD is dedicated to delivering exceptional service and unparalleled connectivity solutions. Our commitment to excellence is reflected in every aspect of our operations.</p>
+              <ul className="custom-icon-list">
+                            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Quality assurance at every step</li>
+                            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Transparent communication and pricing</li>
+                            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Continuous innovation and improvement</li>
+                            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Environmental responsibility</li>
+                            <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Community engagement and support</li>
+              </ul>
+            </div>
+
+            <div>
+              <img src={wifipeople} className='construction-image'/>
+            </div>
+          </section>
+
+          <h1 className="section-title">What Our Clients Say</h1>
+          <section className="profile-section">
+            <div className="clients-container">
+              <div className="smol-profile">
+                <div className="profile-pic">A</div>
+                <div className="profile-info">
+                  <h1>Angela Wucherpfennig</h1>
+                  <h2>Property Manager</h2>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                  The Wandall Tech team helped us implement a property-wide connectivity solution that has impressed our residents and significantly reduced our maintenance calls. Highly recommended!
+              </p>
+              <p className="explore">★★★★★</p>
+            </div>
+
+            <div className="clients-container">
+              <div className="smol-profile">
+                <div className="profile-pic">K</div>
+                <div className="profile-info">
+                  <h1>Kevin Ingunyi</h1>
+                  <h2>Small Business Owner</h2>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                Wandall Technologies LTD transformed our connectivity infrastructure. Their team was professional, thorough, and incredibly responsive. We've seen a significant improvement in our network reliability and speed.
+              </p>
+              <p className="explore">★★★★★</p>
+            </div>
+
+            <div className="clients-container">
+              <div className="smol-profile">
+                <div className="profile-pic">B</div>
+                <div className="profile-info">
+                  <h1>Byron Nthiga</h1>
+                  <h2>IT Director</h2>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                We've worked with several connectivity providers, but Wandall Technologies LTD stands out for their technical expertise and commitment to customer satisfaction. Their support team is second to none.
+              </p>
+              <p className="explore">★★★★★</p>
+            </div>
+          </section>
+
         </>
     )
 }
