@@ -177,7 +177,16 @@ function WhyUs(){
               <p className="explore">★★★★★</p>
             </div>
           </section>
+           
 
+          <section className='why-us-end'>
+            <h1>Ready to Experience the Wandall Tech Difference?</h1>
+            <h2>Join the growing family of satisfied clients who trust Wandall Technologies for their connectivity needs.</h2>
+            <div className='why-us-con'>
+              <p>Schedule a Consultation</p>
+              <p>View Our Solutions</p>
+            </div>
+          </section>
         </>
     )
 }

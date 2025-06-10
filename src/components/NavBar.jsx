@@ -51,9 +51,6 @@ function NavBar() {
         <NavLink to="/why-us" onClick={handleLinkClick} className="nav-link">
           WHY CHOOSE US
         </NavLink>
-        <NavLink to="/blog" onClick={handleLinkClick} className="nav-link">
-          BLOG
-        </NavLink>
       </div>
     </nav>
   );

@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css'
-import Blog from './components/Blog'
 import InternetPlans from './components/InternetPlans' 
 import CyberSecurity from './components/CyberSecurity'
 import Home from './components/Home'
@@ -14,7 +13,6 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
         <Route path="/internet-plans" element={<InternetPlans />} />
         <Route path="/green-power" element={<GreenPower />} />
         <Route path="/cyber-security" element={<CyberSecurity />} />
