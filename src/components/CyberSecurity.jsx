@@ -9,7 +9,7 @@ import '../css/cybersecurity.css'
 function CyberSecurity(){
     return(
         <>
-        <section className="intro section">
+        <section className="intro section" data-aos="fade-up">
             <div className='intro-text'>
                 <p>Protecting Your Digital Presence</p>
                 <h1>Advanced Cybersecurity Solutions</h1>
@@ -23,8 +23,8 @@ function CyberSecurity(){
         </section>
 
        
-                  <h1>Our Cybersecurity Services</h1>
-        <section className='three-cubes-container section'>
+                  <h1 data-aos="fade-up">Our Cybersecurity Services</h1>
+        <section className='three-cubes-container section' data-aos="fade-up">
                     {[ 
                       {
                         img: biometric,
@@ -52,7 +52,7 @@ function CyberSecurity(){
         </section>
        
 
-        <section className='bandwidth section'>
+        <section className='bandwidth section' data-aos="fade-up">
           <div className='construction-image'>
             <img src={lock}/>
           </div>
@@ -72,7 +72,7 @@ function CyberSecurity(){
         </section>
 
 
-        <section>
+        <section data-aos="fade-up">
           <div className='ready-cybersecurity'>
               <div>
                 <h1>Ready to Secure Your Digital Future?</h1>
@@ -86,7 +86,7 @@ function CyberSecurity(){
         </section>
 
 
-       <footer>
+       <footer data-aos="slide-up">
         Copyright © 2025 WANDALL TECHNOLOGIES LTD
        </footer>
         </>

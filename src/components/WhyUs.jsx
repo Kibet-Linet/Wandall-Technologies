@@ -15,7 +15,7 @@ import wifipeople from '../assets/wifi-icon-people.jpg'
 function WhyUs(){
     return(
         <>
-          <section className="whyus-intro-container">
+          <section className="whyus-intro-container" data-aos="fade-up">
              <div className="whyus-intro">
                 <p>Our Commitment To Excellence</p>
                 <h1>Why Choose Wandall Technologies?</h1>
@@ -28,7 +28,7 @@ function WhyUs(){
           </section>
 
 
-          <section className='battery section'>
+          <section className='battery section' data-aos="fade-up">
               <div>
                 <img src={world} className='battery-image'/>
               </div>
@@ -41,8 +41,8 @@ function WhyUs(){
           </section>
 
 
-          <h1 className="section-title">Key Advantages</h1>
-          <section className="three-cubes-container section">
+          <h1 className="section-title" data-aos="fade-up">Key Advantages</h1>
+          <section className="three-cubes-container section" data-aos="fade-up">
             {[
               {
                      img: kawifi,
@@ -70,8 +70,8 @@ function WhyUs(){
             ))}
           </section>
 
-          <h1 className="section-title">Our Approach</h1>
-          <section className='whyus-approach'>
+          <h1 className="section-title" data-aos="fade-up">Our Approach</h1>
+          <section className='whyus-approach' data-aos="fade-up">
             <div className='approach-container'>
               <div className='titless'>
                 <h1 className='number'>1</h1>    
@@ -115,7 +115,7 @@ function WhyUs(){
           </section>
 
 
-          <section className='commitment-section'>
+          <section className='commitment-section' data-aos="fade-up">
             <div className='commitment-container'>
               <h1>Our Commitment to Excellence</h1>
               <p>Wandall Technologies LTD is dedicated to delivering exceptional service and unparalleled connectivity solutions. Our commitment to excellence is reflected in every aspect of our operations.</p>
@@ -133,8 +133,8 @@ function WhyUs(){
             </div>
           </section>
 
-          <h1 className="section-title">What Our Clients Say</h1>
-          <section className="profile-section">
+          <h1 className="section-title" data-aos="fade-up">What Our Clients Say</h1>
+          <section className="profile-section" data-aos="fade-right">
             <div className="clients-container">
               <div className="smol-profile">
                 <div className="profile-pic">A</div>
@@ -179,7 +179,7 @@ function WhyUs(){
           </section>
            
 
-          <section className='why-us-end'>
+          <section className='why-us-end' data-aos="fade-right">
             <h1>Ready to Experience the Wandall Tech Difference?</h1>
             <h2>Join the growing family of satisfied clients who trust Wandall Technologies for their connectivity needs.</h2>
             <div className='why-us-con'>

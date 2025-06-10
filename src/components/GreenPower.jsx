@@ -11,7 +11,7 @@ import '../css/greenpower.css';
 function GreenPower() {
   return (
     <>
-      <section className="intro-green-section">
+      <section data-aos="fade-up" className="intro-green-section">
         <div className="text-solar">
           <p className="tagline">Sustainable Energy Solutions</p>
           <h1>Powering Tomorrow with Green Energy</h1>
@@ -28,8 +28,8 @@ function GreenPower() {
         </div>
       </section>
 
-      <h1 className="section-title">Our Green Power Solutions</h1>
-      <section className="three-cubes-container section">
+      <h1 className="section-title" data-aos="fade-up">Our Green Power Solutions</h1>
+      <section className="three-cubes-container section" data-aos="fade-up">
         {[
           {
             img: panel,
@@ -56,7 +56,7 @@ function GreenPower() {
         ))}
       </section>
 
-      <section className="battery section">
+      <section className="battery section" data-aos="fade-up">
         <div className="battery-image">
           <img src={house} alt="Battery" />
         </div>
@@ -78,7 +78,7 @@ function GreenPower() {
         </div>
       </section>
 
-      <section className="things section">
+      <section className="things section" data-aos="fade-up">
         {[ 
           {
             img: generator,
@@ -106,7 +106,7 @@ function GreenPower() {
       </section>
 
 
-      <section className='benefits-section'>
+      <section className='benefits-section' data-aos="fade-up">
            <h1>Benefits of Green Power</h1>
            <div className='benefits-container'>
               <div className='benefits-text'>
@@ -135,7 +135,7 @@ function GreenPower() {
            </div>
       </section>
 
-      <section className='green-ready'>
+      <section className='green-ready'data-aos="fade-up">
         <h1>Ready to Embrace Green Power?</h1>
         <p>Join Wandall Technologies LTD in our mission to create a sustainable future through innovative green power solutions.</p>
         <div  className='explore-green'>

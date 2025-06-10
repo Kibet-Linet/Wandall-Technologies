@@ -1,4 +1,7 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './App.css'
 import InternetPlans from './components/InternetPlans' 
 import CyberSecurity from './components/CyberSecurity'
@@ -7,7 +10,15 @@ import WhyUs from './components/WhyUs'
 import GreenPower from "./components/GreenPower";
 import NavBar from "./components/NavBar";
 
+
 function App() {
+    useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+  
   return (
     <>
       <NavBar />

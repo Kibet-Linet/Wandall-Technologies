@@ -34,7 +34,7 @@ function Home() {
 
   return (
     <>
-      <section className="intro section">
+      <section className="intro section" data-aos="fade-up">
           <div className='intro-text'>
             <h3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h3>
             <h1>CONNECT,<br />INNOVATE, GROW</h1>
@@ -46,7 +46,7 @@ function Home() {
           </div>
       </section>
 
-       <section className='three-cubes-container section'>
+       <section className='three-cubes-container section' data-aos="fade-up">
         {[ 
           {
             img: wifi,
@@ -76,7 +76,7 @@ function Home() {
         ))}
       </section>
 
-      <section className='bandwidth section'>
+      <section className='bandwidth section' data-aos="fade-up">
         <div>
           <p>Bandwidth</p>
           <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 250 Only</h1>
@@ -88,7 +88,7 @@ function Home() {
         </div>
       </section>
 
-      <section className='starlink section'>
+      <section className='starlink section' data-aos="fade-up">
         <div>
           <h1>Meet the Starlink Gen2 & Gen3 Devices</h1>
           <p>Advanced satellite device compatible with 3G/4G networks, delivering high-speed broadband via satellite connection.</p>
@@ -103,7 +103,7 @@ function Home() {
         </div>
       </section>
 
-      <section className='battery section'>
+      <section className='battery section' data-aos="fade-up">
         <div className='construction-image'>
           <img src={battery} alt="battery" />
         </div>
@@ -114,7 +114,7 @@ function Home() {
         </div>
       </section>
 
-      <section className='section'>
+      <section className='section' data-aos="fade-up">
         <h1 className='header'>The Wandall Technologies Difference</h1>
         <div className='three-cubes-container'>
           {[
@@ -134,13 +134,13 @@ function Home() {
         </div>
       </section>
 
-      <section className='contacts section'>
+      <section className='contacts section' data-aos="fade-up">
         <h1>Get in touch</h1>
         <p>Call us at +254-740-537-57 for any assistance</p>
         <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
       </section>
 
-      <footer>
+      <footer data-aos="slide-up">
         Copyright © 2025 WANDALL TECHNOLOGIES LTD
       </footer>
     </>
