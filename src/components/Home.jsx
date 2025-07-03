@@ -1,4 +1,4 @@
-import { useEffect} from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/home.css';
 import construction from '../assets/construction-img.jpg';
@@ -11,6 +11,22 @@ import battery from "../assets/battery.jpg";
 
 function Home() {
   const navigate = useNavigate();
+
+  const [showForm, setShowForm] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [formData, setFormData] = useState({
+    package: '',
+    projectType: '',
+    cableType: '',
+    floors: '',
+    units: '',
+    county: '',
+    town: '',
+    name: '',
+    email: '',
+    phone: '',
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,26 +44,88 @@ function Home() {
     hiddenElements.forEach(el => observer.observe(el));
   }, []);
 
-   const handleNavigate = (path) => () => {
+  const handleNavigate = (path) => () => {
     navigate(path);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    for (const key in formData) {
+      if (formData[key].trim() === '') {
+        setSuccessMessage('');
+        setErrorMessage('Please fill in all fields.');
+        return;
+      }
+    }
+
+    fetch('http://localhost:5000/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setSuccessMessage('Your request was sent successfully!');
+          setErrorMessage('');
+          setShowForm(false);
+          setFormData({
+            package: '',
+            projectType: '',
+            cableType: '',
+            floors: '',
+            units: '',
+            county: '',
+            town: '',
+            name: '',
+            email: '',
+            phone: '',
+          });
+        } else {
+          setSuccessMessage('');
+          setErrorMessage('Failed to send request. Please try again.');
+        }
+      })
+      .catch(() => {
+        setSuccessMessage('');
+        setErrorMessage('An error occurred. Please try again later.');
+      });
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+    setErrorMessage('');
+    setSuccessMessage('');
   };
 
   return (
     <>
       <section className="intro section" data-aos="fade-up">
-          <div className='intro-text'>
-            <h3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h3>
-            <h1>CONNECT,<br />INNOVATE, GROW</h1>
-            <p>Our dedication to future-proofing businesses through Intelligent Connectivity enables building connections that enhance a technological future.</p>
-            <p className='p'>Develop With Wandall Technologies LTD</p>
-          </div>
-          <div className='construction-image'>
-            <img src={construction} alt="construction" />
-          </div>
+        <div className='intro-text'>
+          <h3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h3>
+          <h1>CONNECT,<br />INNOVATE, GROW</h1>
+          <p>Our dedication to future-proofing businesses through Intelligent Connectivity enables building connections that enhance a technological future.</p>
+          <p
+            className='p'
+            onClick={() => setShowForm(true)}
+            style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}
+          >
+            Develop With Wandall Technologies LTD
+          </p>
+        </div>
+        <div className='construction-image'>
+          <img src={construction} alt="construction" />
+        </div>
       </section>
 
-       <section className='three-cubes-container section' data-aos="fade-up">
-        {[ 
+      <section className='three-cubes-container section' data-aos="fade-up">
+        {[
           {
             img: wifi,
             title: 'Home/Business Internet Plans',
@@ -143,6 +221,87 @@ function Home() {
       <footer data-aos="slide-up">
         Copyright © 2025 WANDALL TECHNOLOGIES LTD
       </footer>
+
+      {/* POPUP FORM */}
+      {showForm && (
+        <div className="popup-form-overlay">
+          <div className="popup-form">
+            <button className="close-button" onClick={handleCloseForm}>×</button>
+            <form onSubmit={handleSubmit}>
+              <h1>Develop with Wandall Technologies LTD</h1>
+
+              <label>
+                Project Type:
+                <select name="projectType" value={formData.projectType} onChange={handleChange} required>
+                  <option value="">--Select Project Type--</option>
+                  <option value="Internet Supply Contract">Internet Supply Contract</option>
+                  <option value="Structural Cabling">Structural Cabling</option>
+                  <option value="Investor">Investor</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Hotspot Business">Hotspot Business</option>
+                </select>
+              </label>
+
+              {(formData.projectType === 'Internet Supply Contract' || formData.projectType === 'Structural Cabling') && (
+                <>
+                  <label>
+                    Cable Type:
+                    <select name="cableType" value={formData.cableType} onChange={handleChange} required>
+                      <option value="">--Select Cable Type--</option>
+                      <option value="Fiber Cable">Fiber Cable</option>
+                      <option value="LAN Cable">LAN Cable</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Number of Floors:
+                    <input type="number" name="floors" min="0" value={formData.floors} onChange={handleChange} required />
+                  </label>
+
+                  <label>
+                    Number of Units:
+                    <input type="number" name="units" min="0" value={formData.units} onChange={handleChange} required />
+                  </label>
+                </>
+              )}
+
+              <label>
+                Full Name / Company Name:
+                <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+              </label>
+
+              <div className="location-row">
+                <label>
+                  County:
+                  <input type="text" name="county" value={formData.county} onChange={handleChange} required />
+                </label>
+                <label>
+                  Town:
+                  <input type="text" name="town" value={formData.town} onChange={handleChange} required />
+                </label>
+              </div>
+
+              <label>
+                Email:
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+              </label>
+
+              <label>
+                Contact:
+                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+              </label>
+
+              <div className="form-buttons">
+                <button type="button" onClick={handleCloseForm}>Exit</button>
+                <button type="submit">Submit</button>
+              </div>
+
+              {successMessage && <p className="success-message">{successMessage}</p>}
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
