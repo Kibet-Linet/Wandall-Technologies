@@ -91,7 +91,7 @@ function InternetPlans() {
   };
 
   return (
-    <div className="internet-plans-container">
+    <div className="internet-plans-container" data-aos="fade-up">
       <h2>Choose Your Internet Plan</h2>
       <div className="plans-list">
         {plans.map((plan) => (

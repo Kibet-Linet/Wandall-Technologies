@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/home.css';
 import construction from '../assets/construction-img.jpg';
@@ -11,7 +11,7 @@ import battery from "../assets/battery.jpg";
 
 function Home() {
   const navigate = useNavigate();
-
+  const contactRef = useRef(null);
   const [showForm, setShowForm] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -159,7 +159,10 @@ function Home() {
           <p>Bandwidth</p>
           <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 250 Only</h1>
           <p>Scaling with Wandall Technologies Dedicated Capacity Solutions and Partnerships</p>
-          <p className='p'>Call Us Today</p>
+          <p className='p' onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
+           Call Us Today
+          </p>
+
         </div>
         <div className='construction-image'>
           <img src={powergrid} alt="construction" />
@@ -212,11 +215,12 @@ function Home() {
         </div>
       </section>
 
-      <section className='contacts section' data-aos="fade-up">
-        <h1>Get in touch</h1>
-        <p>Call us at +254-740-537-57 for any assistance</p>
-        <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
+      <section className='contacts section' data-aos="fade-up" ref={contactRef}>
+          <h1>Get in touch</h1>
+          <p>Call us at +254-740-537-57 for any assistance</p>
+          <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
       </section>
+
 
       <footer data-aos="slide-up">
         Copyright © 2025 WANDALL TECHNOLOGIES LTD
