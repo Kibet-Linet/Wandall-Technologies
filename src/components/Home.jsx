@@ -8,9 +8,11 @@ import cybersecurity from '../assets/cybersecurity-icon.jpg';
 import powergrid from '../assets/power-grid.jpg';
 import starlink from '../assets/starlink.jpg';
 import battery from "../assets/battery.jpg";
+import Inventory from './Inventory';
 
 function Home() {
   const navigate = useNavigate();
+  const [showInventory, setShowInventory] = useState(false);
   const contactRef = useRef(null);
   const [showForm, setShowForm] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -173,7 +175,7 @@ function Home() {
         <div>
           <h1>Meet the Starlink Gen2 & Gen3 Devices</h1>
           <p>Advanced satellite device compatible with 3G/4G networks, delivering high-speed broadband via satellite connection.</p>
-          <p className='p'>Get the Starlink Kit Now!</p>
+          <p className='p' onClick={setShowInventory}>Get the Starlink Kit Now!</p>
         </div>
         <div className='construction-image'>
           <div className="outer-box">
@@ -191,7 +193,7 @@ function Home() {
         <div>
           <h1>Meet the Hithium Battery</h1>
           <p>Chargeable via Solar or Grid, the Hithium Battery comes with a 2-year warranty and 10000 cycles.</p>
-          <p className='p'>Get your Hithium Battery Today!</p>
+          <p className='p' onClick={setShowInventory}>Get your Hithium Battery Today!</p>
         </div>
       </section>
 
@@ -306,6 +308,7 @@ function Home() {
           </div>
         </div>
       )}
+      {showInventory && <Inventory onClose={() => setShowInventory(false)} />}
     </>
   );
 }
