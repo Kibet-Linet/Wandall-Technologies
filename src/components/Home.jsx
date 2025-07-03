@@ -268,7 +268,7 @@ function Home() {
 
                   <label>
                     Number of Units:
-                    <input type="number" name="units" min="0" value={formData.units} onChange={handleChange} required />
+                    <input type="number" name="units" min="1" value={formData.units} onChange={handleChange} required />
                   </label>
                 </>
               )}
