@@ -6,6 +6,7 @@ import cctv from '../assets/cctv.jpg'
 import networksecurity from '../assets/padlock.jpg'
 import lock from '../assets/lock.jpg'
 import '../css/cybersecurity.css'
+
 function CyberSecurity(){
     return(
         <>

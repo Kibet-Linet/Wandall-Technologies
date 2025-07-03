@@ -17,18 +17,19 @@ function Home() {
   const [showForm, setShowForm] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [formData, setFormData] = useState({
-    package: '',
-    projectType: '',
-    cableType: '',
-    floors: '',
-    units: '',
-    county: '',
-    town: '',
-    name: '',
-    email: '',
-    phone: '',
-  });
+  const initialFormState = {
+  package: '',
+  projectType: '',
+  cableType: '',
+  floors: '',
+  units: '',
+  county: '',
+  town: '',
+  name: '',
+  email: '',
+  phone: '',
+   };
+  const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,6 +105,7 @@ function Home() {
     setShowForm(false);
     setErrorMessage('');
     setSuccessMessage('');
+    setFormData(initialFormState);
   };
 
   return (
@@ -238,22 +240,22 @@ function Home() {
 
               <label>
                 Project Type:
-                <select name="projectType" value={formData.projectType} onChange={handleChange} required>
-                  <option value="">--Select Project Type--</option>
+              <select name="projectType" value={formData.projectType} onChange={handleChange} required>
+                  <option value="" disabled hidden>-- Select Project Type --</option>
                   <option value="Internet Supply Contract">Internet Supply Contract</option>
                   <option value="Structural Cabling">Structural Cabling</option>
                   <option value="Investor">Investor</option>
                   <option value="Partnership">Partnership</option>
                   <option value="Hotspot Business">Hotspot Business</option>
-                </select>
+              </select>
               </label>
 
               {(formData.projectType === 'Internet Supply Contract' || formData.projectType === 'Structural Cabling') && (
                 <>
                   <label>
                     Cable Type:
-                    <select name="cableType" value={formData.cableType} onChange={handleChange} required>
-                      <option value="">--Select Cable Type--</option>
+                   <select name="cableType" value={formData.cableType} onChange={handleChange} required>
+                      <option value="" disabled hidden>-- Select Cable Type --</option>
                       <option value="Fiber Cable">Fiber Cable</option>
                       <option value="LAN Cable">LAN Cable</option>
                     </select>
