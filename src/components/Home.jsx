@@ -1,4 +1,4 @@
-import { useEffect, useState,useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/home.css';
 import construction from '../assets/construction-img.jpg';
@@ -17,18 +17,20 @@ function Home() {
   const [showForm, setShowForm] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
   const initialFormState = {
-  package: '',
-  projectType: '',
-  cableType: '',
-  floors: '',
-  units: '',
-  county: '',
-  town: '',
-  name: '',
-  email: '',
-  phone: '',
-   };
+    package: '',
+    projectType: '',
+    cableType: '',
+    floors: '',
+    units: '',
+    county: '',
+    town: '',
+    name: '',
+    email: '',
+    phone: '',
+  };
+
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
@@ -59,14 +61,36 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    for (const key in formData) {
-      if (formData[key].trim() === '') {
+    // Define fields that are always required
+    const requiredFields = [
+      'projectType',
+      'name',
+      'county',
+      'town',
+      'email',
+      'phone'
+    ];
+
+    // Add conditional fields for specific project types
+    if (formData.projectType === 'Internet Supply Contract' || formData.projectType === 'Structural Cabling') {
+      requiredFields.push('cableType', 'floors', 'units');
+    }
+
+    // Check if any required field is missing or empty (trimmed)
+    for (const field of requiredFields) {
+      const value = formData[field];
+      if (value === null || value === undefined || value.toString().trim() === '') {
         setSuccessMessage('');
         setErrorMessage('Please fill in all fields.');
         return;
       }
     }
 
+    // Clear previous messages
+    setErrorMessage('');
+    setSuccessMessage('');
+
+    // Proceed with API call
     fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -78,18 +102,7 @@ function Home() {
           setSuccessMessage('Your request was sent successfully!');
           setErrorMessage('');
           setShowForm(false);
-          setFormData({
-            package: '',
-            projectType: '',
-            cableType: '',
-            floors: '',
-            units: '',
-            county: '',
-            town: '',
-            name: '',
-            email: '',
-            phone: '',
-          });
+          setFormData(initialFormState);
         } else {
           setSuccessMessage('');
           setErrorMessage('Failed to send request. Please try again.');
@@ -149,7 +162,7 @@ function Home() {
             link: '/green-power'
           }
         ].map((item, idx) => (
-          <div className='three-cubes' key={idx} onClick={handleNavigate(item.link)} style={{ cursor: 'pointer' }}>
+          <div key={idx} className='three-cubes' onClick={handleNavigate(item.link)} style={{ cursor: 'pointer' }}>
             <img src={item.img} alt={item.title} className="logo" />
             <h1>{item.title}</h1>
             <p>{item.text}</p>
@@ -163,10 +176,13 @@ function Home() {
           <p>Bandwidth</p>
           <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 250 Only</h1>
           <p>Scaling with Wandall Technologies Dedicated Capacity Solutions and Partnerships</p>
-          <p className='p' onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
-           Call Us Today
+          <p
+            className='p'
+            onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            style={{ cursor: 'pointer' }}
+          >
+            Call Us Today
           </p>
-
         </div>
         <div className='construction-image'>
           <img src={powergrid} alt="construction" />
@@ -177,7 +193,7 @@ function Home() {
         <div>
           <h1>Meet the Starlink Gen2 & Gen3 Devices</h1>
           <p>Advanced satellite device compatible with 3G/4G networks, delivering high-speed broadband via satellite connection.</p>
-          <p className='p' onClick={setShowInventory}>Get the Starlink Kit Now!</p>
+          <p className='p' onClick={() => setShowInventory(true)}>Get the Starlink Kit Now!</p>
         </div>
         <div className='construction-image'>
           <div className="outer-box">
@@ -195,7 +211,7 @@ function Home() {
         <div>
           <h1>Meet the Hithium Battery</h1>
           <p>Chargeable via Solar or Grid, the Hithium Battery comes with a 2-year warranty and 10000 cycles.</p>
-          <p className='p' onClick={setShowInventory}>Get your Hithium Battery Today!</p>
+          <p className='p' onClick={() => setShowInventory(true)}>Get your Hithium Battery Today!</p>
         </div>
       </section>
 
@@ -207,12 +223,14 @@ function Home() {
             'Best Bandwidth Deals for Small Scale Clients',
             'Future-ready Developments'
           ].map((title, index) => (
-            <div className='three-cubes' key={index}>
+            <div key={index} className='three-cubes'>
               <img src={wifi} alt="wifi icon" className="logo" />
               <h1>{title}</h1>
-              <p>{index === 0 ? 'Everyone in your home can stream, game and meet with confidence.' :
-                index === 1 ? 'Outreaching communities via links across the country.' :
-                'Smart Homes via IOT solutions and structured cabling.'}
+              <p>{index === 0
+                ? 'Everyone in your home can stream, game and meet with confidence.'
+                : index === 1
+                  ? 'Outreaching communities via links across the country.'
+                  : 'Smart Homes via IOT solutions and structured cabling.'}
               </p>
             </div>
           ))}
@@ -220,11 +238,10 @@ function Home() {
       </section>
 
       <section className='contacts section' data-aos="fade-up" ref={contactRef}>
-          <h1>Get in touch</h1>
-          <p>Call us at +254-740-537-57 for any assistance</p>
-          <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
+        <h1>Get in touch</h1>
+        <p>Call us at +254-740-537-57 for any assistance</p>
+        <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
       </section>
-
 
       <footer data-aos="slide-up">
         Copyright © 2025 WANDALL TECHNOLOGIES LTD
@@ -240,21 +257,26 @@ function Home() {
 
               <label>
                 Project Type:
-              <select name="projectType" value={formData.projectType} onChange={handleChange} required>
+                <select name="projectType" value={formData.projectType} onChange={handleChange} required>
                   <option value="" disabled hidden>-- Select Project Type --</option>
                   <option value="Internet Supply Contract">Internet Supply Contract</option>
                   <option value="Structural Cabling">Structural Cabling</option>
                   <option value="Investor">Investor</option>
                   <option value="Partnership">Partnership</option>
                   <option value="Hotspot Business">Hotspot Business</option>
-              </select>
+                </select>
               </label>
 
               {(formData.projectType === 'Internet Supply Contract' || formData.projectType === 'Structural Cabling') && (
                 <>
                   <label>
                     Cable Type:
-                   <select name="cableType" value={formData.cableType} onChange={handleChange} required>
+                    <select
+                      name="cableType"
+                      value={formData.cableType}
+                      onChange={handleChange}
+                      required
+                    >
                       <option value="" disabled hidden>-- Select Cable Type --</option>
                       <option value="Fiber Cable">Fiber Cable</option>
                       <option value="LAN Cable">LAN Cable</option>
@@ -263,12 +285,26 @@ function Home() {
 
                   <label>
                     Number of Floors:
-                    <input type="number" name="floors" min="0" value={formData.floors} onChange={handleChange} required />
+                    <input
+                      type="number"
+                      name="floors"
+                      min="0"
+                      value={formData.floors}
+                      onChange={handleChange}
+                      required
+                    />
                   </label>
 
                   <label>
                     Number of Units:
-                    <input type="number" name="units" min="1" value={formData.units} onChange={handleChange} required />
+                    <input
+                      type="number"
+                      name="units"
+                      min="1"
+                      value={formData.units}
+                      onChange={handleChange}
+                      required
+                    />
                   </label>
                 </>
               )}
@@ -310,6 +346,7 @@ function Home() {
           </div>
         </div>
       )}
+
       {showInventory && <Inventory onClose={() => setShowInventory(false)} />}
     </>
   );
