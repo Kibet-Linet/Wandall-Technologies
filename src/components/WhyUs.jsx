@@ -11,8 +11,11 @@ import construction from '../assets/construction.jpg'
 import handshake from '../assets/handshake.jpg'
 import wires from '../assets/wires.jpg'
 import wifipeople from '../assets/wifi-icon-people.jpg'
+import { useRef } from 'react';
 
 function WhyUs(){
+    const contactRef = useRef(null);
+
     return(
         <>
           <section className="whyus-intro-container" data-aos="fade-up">
@@ -20,13 +23,18 @@ function WhyUs(){
                 <p>Our Commitment To Excellence</p>
                 <h1>Why Choose Wandall Technologies?</h1>
                 <p>When you partner with Wandall Technologies LTD, you're choosing a team dedicated to innovation, reliability, and customer satisfaction. Discover the difference that makes us the preferred connectivity provider.</p>
-                <p className='p'>Get Started Today</p>
+                {/* <p className='p'>Get Started Today</p> */}
              </div>
              <div>
                 <img src={greet} className='construction-image'/>
              </div>
           </section>
-
+            
+          <section className='contacts section' data-aos="fade-up" ref={contactRef}>
+              <h1>Get in touch</h1>
+              <p>Call us at +254-740-537-57 for any assistance</p>
+              <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
+          </section>
 
           <section className='battery section' data-aos="fade-up">
               <div>
@@ -36,7 +44,7 @@ function WhyUs(){
               <div>
                  <h1>Our Vision</h1>
                  <p>At Wandall Technologies LTD, we envision a world where connectivity is seamless, reliable, and accessible to all. We're committed to bridging digital divides and empowering communities through innovative connectivity solutions.</p>
-                 <p className='explore'>Learn About Our Mission</p>
+                 {/* <p className='explore'>Learn About Our Mission</p> */}
               </div>
           </section>
 
@@ -183,8 +191,8 @@ function WhyUs(){
             <h1>Ready to Experience the Wandall Tech Difference?</h1>
             <h2>Join the growing family of satisfied clients who trust Wandall Technologies for their connectivity needs.</h2>
             <div className='why-us-con'>
-              <p>Schedule a Consultation</p>
-              <p>View Our Solutions</p>
+              <p onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>Schedule a Consultation</p>
+              {/* <p>View Our Solutions</p> */}
             </div>
           </section>
         </>

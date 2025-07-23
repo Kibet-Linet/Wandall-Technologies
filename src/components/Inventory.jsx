@@ -69,6 +69,9 @@ function Inventory({ onClose }) {
               Inquire / Book via WhatsApp
             </button>
           </a>
+            <div className="form-buttons">
+                <button onClick={onClose}>Exit</button>  
+              </div>
         </div>
       </div>
     </div>

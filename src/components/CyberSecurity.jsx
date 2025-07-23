@@ -6,8 +6,10 @@ import cctv from '../assets/cctv.jpg'
 import networksecurity from '../assets/padlock.jpg'
 import lock from '../assets/lock.jpg'
 import '../css/cybersecurity.css'
-
+import {useRef } from 'react';
 function CyberSecurity(){
+    const contactRef = useRef(null);
+  
     return(
         <>
         <section className="intro section" data-aos="fade-up">
@@ -22,7 +24,12 @@ function CyberSecurity(){
                 <img src={worldcircuit}/>
             </div>
         </section>
-
+          
+        <section className='contacts section' data-aos="fade-up" ref={contactRef}>
+          <h1>Get in touch</h1>
+          <p>Call us at +254-740-537-57 for any assistance</p>
+          <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
+        </section>
        
                   <h1 data-aos="fade-up">Our Cybersecurity Services</h1>
         <section className='three-cubes-container section' data-aos="fade-up">
@@ -47,11 +54,12 @@ function CyberSecurity(){
                         <img src={item.img} alt={item.title} className="cyber-security-img" />
                         <h1>{item.title}</h1>
                         <p>{item.text}</p>
-                        <p className='p'>Learn more</p>
+                        {/* <p className='p'>Learn more</p> */}
                       </div>
                     ))}
         </section>
        
+        
 
         <section className='bandwidth section' data-aos="fade-up">
           <div className='construction-image'>
@@ -68,7 +76,7 @@ function CyberSecurity(){
               <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Employee Security Training</li>
             </ul>
 
-            <p className='p'>Request a Security Audit</p>
+            {/* <p className='p'>Request a Security Audit</p> */}
           </div>
         </section>
 
@@ -80,8 +88,8 @@ function CyberSecurity(){
                 <p>Partner with Wandall Technologies LTD for comprehensive cybersecurity solutions designed to protect your valuable data and systems.</p>
               </div>
               <div className='p-brothers'>
-                <p className='p'>Contact Our Security Experts</p>
-                <p className='p'>Request a Free Consultation</p>
+                <p className='p'  onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>Contact Our Security Experts</p>
+                <p className='p' onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>Request a Free Consultation</p>
               </div>
           </div>
         </section>

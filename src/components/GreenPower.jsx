@@ -20,7 +20,7 @@ function GreenPower() {
             initiatives. Our commercial solutions are scalable to meet the needs of any size operation.
             We're committed to reducing carbon footprints while providing reliable power for your connectivity needs.
           </p>
-          <p className="explore">Explore Green Solutions</p>
+          {/* <p className="explore">Explore Green Solutions</p> */}
         </div>
 
         <div className="image-solar">
@@ -51,7 +51,7 @@ function GreenPower() {
             <img src={item.img} alt={item.title} />
             <h2>{item.title}</h2>
             <p>{item.text}</p>
-            <p className='p'>Learn more</p>
+            {/* <p className='p'>Learn more</p> */}
           </div>
         ))}
       </section>
@@ -74,7 +74,7 @@ function GreenPower() {
             <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Lower carbon footprint and environmental impact</li>
             <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />Smart energy management systems</li>
           </ul>
-          <p className="explore">Request an Energy Assessment</p>
+          {/* <p className="explore">Request an Energy Assessment</p> */}
         </div>
       </section>
 
@@ -100,7 +100,7 @@ function GreenPower() {
             <ul className='custom-icon-list' >
               {item.list.map((li, i) => <li key={i}><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" />{li}</li>)}
             </ul>
-            <p className="explore">Explore this Solution</p>
+            {/* <p className="explore">Explore this Solution</p> */}
           </div>
         ))}
       </section>
@@ -138,10 +138,10 @@ function GreenPower() {
       <section className='green-ready'data-aos="fade-up">
         <h1>Ready to Embrace Green Power?</h1>
         <p>Join Wandall Technologies LTD in our mission to create a sustainable future through innovative green power solutions.</p>
-        <div  className='explore-green'>
+        {/* <div  className='explore-green'>
           <p>Schedule a Consultation</p>
           <p>Download Green Energy Guide</p>
-        </div>
+        </div> */}
       </section>
     </>
   );
