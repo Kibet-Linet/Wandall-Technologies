@@ -89,17 +89,20 @@ function Home() {
     // Clear previous messages
     setErrorMessage('');
     setSuccessMessage('');
-
+     
+    const filledFormData = Object.fromEntries(
+    Object.entries(formData).filter(([_, v]) => v.trim() !== '')
+    );
     // Proceed with API call
     fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(filledFormData ),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          setSuccessMessage('Your request was sent successfully!');
+          setSuccessMessage('Message sent successfully. We will get back to you."');
           setErrorMessage('');
           setShowForm(false);
           setFormData(initialFormState);
@@ -112,6 +115,9 @@ function Home() {
         setSuccessMessage('');
         setErrorMessage('An error occurred. Please try again later.');
       });
+      setTimeout(() => {
+      setSuccessMessage('');
+      }, 5000);
   };
 
   const handleCloseForm = () => {
@@ -123,6 +129,11 @@ function Home() {
 
   return (
     <>
+      {successMessage && (
+          <div className="success-popup">
+            {successMessage}
+          </div>
+      )}
       <section className="intro section" data-aos="fade-up">
         <div className='intro-text'>
           <h3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h3>

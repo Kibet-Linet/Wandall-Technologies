@@ -323,6 +323,51 @@ footer {
   margin-right: 8px;      /* Space between icon and text */
   font-size: 1rem;        /* Adjust size if needed */
 }
+.success-popup {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28a745;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  z-index: 9999;
+  animation: fadeInOut 2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  max-width: 90%;
+  width: fit-content;
+  text-align: center;
+  font-size: 14px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .success-popup {
+    padding: 10px 14px;
+    font-size: 13px;
+    max-width: 95%;
+  }
+}
+
 
 /* ===============================
    11. RESPONSIVE STYLES

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../css/internetplans.css';
 
 const plans = [
@@ -51,15 +51,19 @@ const [formData, setFormData] = useState(initialFormState);
       }
     }
 
+    const filledFormData = Object.fromEntries(
+    Object.entries(formData).filter(([_, v]) => v.trim() !== '')
+    );
+
     fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(filledFormData),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          setSuccessMessage('Your request was sent successfully!');
+          setSuccessMessage('Message sent successfully. We will get back to you.');
           setErrorMessage('');
           setShowForm(false);
           setFormData({
@@ -83,6 +87,9 @@ const [formData, setFormData] = useState(initialFormState);
         setSuccessMessage('');
         setErrorMessage('An error occurred. Please try again later.');
       });
+      setTimeout(() => {
+      setSuccessMessage('');
+      }, 5000);
   };
 
   const handleCloseForm = () => {
@@ -93,6 +100,13 @@ const [formData, setFormData] = useState(initialFormState);
   };
 
   return (
+    <>
+    {successMessage && (
+      <div className="success-popup">
+    {successMessage}
+     </div>
+     )}
+
     <div className="internet-plans-container" data-aos="fade-up">
       <h2>Choose Your Internet Plan</h2>
       <div className="plans-list">
@@ -196,6 +210,7 @@ const [formData, setFormData] = useState(initialFormState);
         </div>
       )}
     </div>
+    </>
   );
 }
 
