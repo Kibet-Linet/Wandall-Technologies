@@ -136,13 +136,13 @@ function Home() {
       )}
       <section className="intro section" data-aos="fade-up">
         <div className='intro-text'>
-          <h3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h3>
-          <h1>CONNECT,<br />INNOVATE, GROW</h1>
+          <h1>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h1>
+          <h3>CONNECT,INNOVATE, GROW</h3>
           <p>Our dedication to future-proofing businesses through Intelligent Connectivity enables building connections that enhance a technological future.</p>
           <p
             className='p'
             onClick={() => setShowForm(true)}
-            style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}
+            style={{ cursor: 'pointer', color: 'white' }}
           >
             Develop With Wandall Technologies LTD
           </p>

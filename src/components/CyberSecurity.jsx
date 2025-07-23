@@ -29,7 +29,7 @@ function CyberSecurity(){
           <h1>Get in touch</h1>
           <p>Call us at +254-740-537-57 for any assistance</p>
           <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
-        </section>
+      </section>
        
                   <h1 data-aos="fade-up">Our Cybersecurity Services</h1>
         <section className='three-cubes-container section' data-aos="fade-up">
@@ -89,7 +89,7 @@ function CyberSecurity(){
               </div>
               <div className='p-brothers'>
                 <p className='p'  onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>Contact Our Security Experts</p>
-                <p className='p' onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>Request a Free Consultation</p>
+                <p className='p'>Request a Free Consultation</p>
               </div>
           </div>
         </section>
