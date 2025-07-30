@@ -136,8 +136,8 @@ function Home() {
       )}
       <section className="intro section" data-aos="fade-up">
         <div className='intro-text'>
-          <h1>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h1>
-          <h3>CONNECT,INNOVATE, GROW</h3>
+          <p3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</p3>
+          <h1>CONNECT, INNOVATE, GROW</h1>
           <p>Our dedication to future-proofing businesses through Intelligent Connectivity enables building connections that enhance a technological future.</p>
           <p
             className='p'
@@ -162,14 +162,14 @@ function Home() {
           },
           {
             img: cybersecurity,
-            title: 'Cybersecurity',
+            title: 'CCTV and Biometric Systems',
             text: 'Unified platform combining CCTV, biometric data, and security measures.',
             link: '/cyber-security'
           },
           {
             img: greenpower,
-            title: 'Green-Power solutions',
-            text: 'Solar and generator solutions for homes and businesses.',
+            title: 'Power Backup',
+            text: 'Solar and Power Battery solutions for homes and businesses.',
             link: '/green-power'
           }
         ].map((item, idx) => (
@@ -185,7 +185,7 @@ function Home() {
       <section className='bandwidth section' data-aos="fade-up">
         <div>
           <p>Bandwidth</p>
-          <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 250 Only</h1>
+          <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 370 Only</h1>
           <p>Scaling with Wandall Technologies Dedicated Capacity Solutions and Partnerships</p>
           <p
             className='p'

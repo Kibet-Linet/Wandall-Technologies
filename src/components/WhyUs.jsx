@@ -178,12 +178,6 @@ function WhyUs(){
               </p>
               <p className="explore">★★★★★</p>
             </div>
-          </section>
-
-          <section className='contacts section' data-aos="fade-up" ref={contactRef}>
-              <h1>Get in touch</h1>
-              <p>Call us at +254-740-537-572 for any assistance</p>
-              <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
           </section> 
 
           <section className='why-us-end' data-aos="fade-right">
@@ -193,6 +187,12 @@ function WhyUs(){
               <p onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>Schedule a Consultation</p>
               {/* <p>View Our Solutions</p> */}
             </div>
+          </section>
+
+          <section className='contacts section' data-aos="fade-up" ref={contactRef}>
+              <h1>Get in touch</h1>
+              <p>Call us at +254-740-537-572 for any assistance</p>
+              <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
           </section>
 
           <footer data-aos="slide-up">
