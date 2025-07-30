@@ -29,12 +29,6 @@ function WhyUs(){
                 <img src={greet} className='construction-image'/>
              </div>
           </section>
-            
-          <section className='contacts section' data-aos="fade-up" ref={contactRef}>
-              <h1>Get in touch</h1>
-              <p>Call us at +254-740-537-57 for any assistance</p>
-              <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
-          </section>
 
           <section className='battery section' data-aos="fade-up">
               <div>
@@ -185,7 +179,12 @@ function WhyUs(){
               <p className="explore">★★★★★</p>
             </div>
           </section>
-           
+
+          <section className='contacts section' data-aos="fade-up" ref={contactRef}>
+              <h1>Get in touch</h1>
+              <p>Call us at +254-740-537-572 for any assistance</p>
+              <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
+          </section> 
 
           <section className='why-us-end' data-aos="fade-right">
             <h1>Ready to Experience the Wandall Tech Difference?</h1>
@@ -195,6 +194,10 @@ function WhyUs(){
               {/* <p>View Our Solutions</p> */}
             </div>
           </section>
+
+          <footer data-aos="slide-up">
+            Copyright © 2025 WANDALL TECHNOLOGIES LTD
+          </footer> 
         </>
     )
 }

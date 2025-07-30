@@ -91,7 +91,7 @@ function Home() {
     setSuccessMessage('');
      
     const filledFormData = Object.fromEntries(
-    Object.entries(formData).filter(([_, v]) => v.trim() !== '')
+    Object.entries(formData).filter(([ , v]) => v.trim() !== '')
     );
     // Proceed with API call
     fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
@@ -250,7 +250,7 @@ function Home() {
 
       <section className='contacts section' data-aos="fade-up" ref={contactRef}>
         <h1>Get in touch</h1>
-        <p>Call us at +254-740-537-57 for any assistance</p>
+        <p>Call us at +254-740-537-572 for any assistance</p>
         <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
       </section>
 

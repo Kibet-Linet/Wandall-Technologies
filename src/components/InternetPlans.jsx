@@ -16,8 +16,6 @@ function InternetPlans() {
   const [errorMessage, setErrorMessage] = useState('');
   const initialFormState = {
   package: '',
-  projectType: '',
-  cableType: '',
   floors: '',
   units: '',
   county: '',
@@ -52,7 +50,7 @@ const [formData, setFormData] = useState(initialFormState);
     }
 
     const filledFormData = Object.fromEntries(
-    Object.entries(formData).filter(([_, v]) => v.trim() !== '')
+    Object.entries(formData).filter(([ , v]) => v.trim() !== '')
     );
 
     fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
@@ -68,8 +66,6 @@ const [formData, setFormData] = useState(initialFormState);
           setShowForm(false);
           setFormData({
             package: '',
-            projectType: '',
-            cableType: '',
             floors: '',
             units: '',
             county: '',
@@ -133,44 +129,17 @@ const [formData, setFormData] = useState(initialFormState);
                   <input type="text" name="package" value={formData.package} readOnly />
                 </label>
               )}
-
+              
               <label>
-                Project Type:
-              <select name="projectType" value={formData.projectType} onChange={handleChange} required>
-                <option value="" disabled hidden>-- Select Project Type --</option>
-                <option value="Internet Supply Contract">Internet Supply Contract</option>
-                <option value="Structural Cabling">Structural Cabling</option>
-                <option value="Investor">Investor</option>
-                <option value="Partnership">Partnership</option>
-                <option value="Hotspot Business">Hotspot Business</option>
-              </select>
-
+                Floor Number:
+                <input type="number" name="floors" min="0" value={formData.floors} onChange={handleChange} required />
               </label>
 
-              {(formData.projectType === 'Internet Supply Contract' || formData.projectType === 'Structural Cabling') && (
-                <>
-                  <label>
-                    Cable Type:
-                   <select name="cableType" value={formData.cableType} onChange={handleChange} required>
-                      <option value="" disabled hidden>-- Select Cable Type --</option>
-                      <option value="Fiber Cable">Fiber Cable</option>
-                      <option value="LAN Cable">LAN Cable</option>
-                   </select>
-
-                  </label>
-
-                  <label>
-                    Number of Floors:
-                    <input type="number" name="floors" min="0" value={formData.floors} onChange={handleChange} required />
-                  </label>
-
-                  <label>
-                    Number of Units:
-                    <input type="number" name="units" min="1" value={formData.units} onChange={handleChange} required />
-                  </label>
-                </>
-              )}
-
+              <label>
+                Unit Name:
+                <input type="text" name="units" min="1" value={formData.units} onChange={handleChange} required />
+              </label>
+              
               <label>
                 Full Name / Company Name:
                 <input type="text" name="name" value={formData.name} onChange={handleChange} required />
