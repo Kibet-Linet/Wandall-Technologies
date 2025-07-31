@@ -10,6 +10,8 @@ import starlink from '../assets/starlink.jpg';
 import battery from "../assets/battery.jpg";
 import Inventory from './Inventory';
 import internetplansicon from '../assets/internetplanicon.jpg';
+import security from '../assets/security.jpg';
+import homesolar from '../assets/homesolar.jpg';
 
 function Home() {
   const navigate = useNavigate();
@@ -157,18 +159,18 @@ function Home() {
         {[
           {
             img: internetplansicon,
-            title: 'Home/Business Internet Plans',
+            title: 'Internet Services',
             text: 'Providing Affordable High-speed wifi solutions for your households or businesses.',
             link: '/internet-plans'
           },
           {
-            img: cybersecurity,
+            img: security,
             title: 'CCTV and Biometric Systems',
             text: 'Unified platform combining CCTV, biometric data, and security measures.',
             link: '/cyber-security'
           },
           {
-            img: greenpower,
+            img: homesolar,
             title: 'Power Backup',
             text: 'Solar and Power Battery solutions for homes and businesses.',
             link: '/green-power'
