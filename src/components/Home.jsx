@@ -9,6 +9,7 @@ import powergrid from '../assets/power-grid.jpg';
 import starlink from '../assets/starlink.jpg';
 import battery from "../assets/battery.jpg";
 import Inventory from './Inventory';
+import internetplansicon from '../assets/internetplanicon.jpg';
 
 function Home() {
   const navigate = useNavigate();
@@ -136,13 +137,13 @@ function Home() {
       )}
       <section className="intro section" data-aos="fade-up">
         <div className='intro-text'>
-          <p3>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</p3>
-          <h1>CONNECT, INNOVATE, GROW</h1>
+          <h1>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h1>
+          <h3>CONNECT, INNOVATE, GROW</h3>
           <p>Our dedication to future-proofing businesses through Intelligent Connectivity enables building connections that enhance a technological future.</p>
           <p
             className='p'
             onClick={() => setShowForm(true)}
-            style={{ cursor: 'pointer', color: 'white' }}
+            style={{ cursor: 'pointer', color: 'White' }}
           >
             Develop With Wandall Technologies LTD
           </p>
@@ -155,7 +156,7 @@ function Home() {
       <section className='three-cubes-container section' data-aos="fade-up">
         {[
           {
-            img: wifi,
+            img: internetplansicon,
             title: 'Home/Business Internet Plans',
             text: 'Providing Affordable High-speed wifi solutions for your households or businesses.',
             link: '/internet-plans'
