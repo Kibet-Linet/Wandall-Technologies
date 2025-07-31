@@ -64,8 +64,8 @@ body {
   gap: var(--section-gap);
   padding: var(--section-gap) 50px;
   flex-wrap: wrap;
-  background-color: rgba(3, 2, 39, 0.9);
-  color: white;
+  background-color: whitesmoke;
+  color: black;
 }
 
 .intro-text, .text-solar {
@@ -78,7 +78,7 @@ body {
 .intro-text h1, .text-solar h1 {
   font-size: 2.5rem;
   font-family: var(--heading-font);
-  color: white;
+  color: black;
   margin: 20px 0;
 }
 
@@ -148,7 +148,7 @@ body {
 =============================== */
 .three-cubes-container {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
   padding: var(--section-gap) 20px;
@@ -159,15 +159,15 @@ body {
   width: 350px;
   background-color: var(--surface-color);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 30px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .three-cube img, .three-cubes img {
-  width: 200px;
+  width: 300px;
   height: 200px;
-  margin: 0 auto 15px;
+  border-radius: 30px;
   padding: 10px;
 }
 

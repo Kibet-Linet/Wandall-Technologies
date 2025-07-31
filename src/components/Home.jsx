@@ -9,6 +9,7 @@ import powergrid from '../assets/power-grid.jpg';
 import starlink from '../assets/starlink.jpg';
 import battery from "../assets/battery.jpg";
 import Inventory from './Inventory';
+import internetplansicon from '../assets/internetplanicon.jpg';
 
 function Home() {
   const navigate = useNavigate();
@@ -91,7 +92,7 @@ function Home() {
     setSuccessMessage('');
      
     const filledFormData = Object.fromEntries(
-    Object.entries(formData).filter(([_, v]) => v.trim() !== '')
+    Object.entries(formData).filter(([ , v]) => v.trim() !== '')
     );
     // Proceed with API call
     fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
@@ -137,12 +138,12 @@ function Home() {
       <section className="intro section" data-aos="fade-up">
         <div className='intro-text'>
           <h1>BUILDING CONNECTIONS FOR A BRIGHTER FUTURE</h1>
-          <h3>CONNECT,INNOVATE, GROW</h3>
+          <h3>CONNECT, INNOVATE, GROW</h3>
           <p>Our dedication to future-proofing businesses through Intelligent Connectivity enables building connections that enhance a technological future.</p>
           <p
             className='p'
             onClick={() => setShowForm(true)}
-            style={{ cursor: 'pointer', color: 'white' }}
+            style={{ cursor: 'pointer', color: 'White' }}
           >
             Develop With Wandall Technologies LTD
           </p>
@@ -155,21 +156,21 @@ function Home() {
       <section className='three-cubes-container section' data-aos="fade-up">
         {[
           {
-            img: wifi,
+            img: internetplansicon,
             title: 'Home/Business Internet Plans',
             text: 'Providing Affordable High-speed wifi solutions for your households or businesses.',
             link: '/internet-plans'
           },
           {
             img: cybersecurity,
-            title: 'Cybersecurity',
+            title: 'CCTV and Biometric Systems',
             text: 'Unified platform combining CCTV, biometric data, and security measures.',
             link: '/cyber-security'
           },
           {
             img: greenpower,
-            title: 'Green-Power solutions',
-            text: 'Solar and generator solutions for homes and businesses.',
+            title: 'Power Backup',
+            text: 'Solar and Power Battery solutions for homes and businesses.',
             link: '/green-power'
           }
         ].map((item, idx) => (
@@ -185,7 +186,7 @@ function Home() {
       <section className='bandwidth section' data-aos="fade-up">
         <div>
           <p>Bandwidth</p>
-          <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 250 Only</h1>
+          <h1>Get Dedicated Internet Access(DIA) today from as low as Kshs 370 Only</h1>
           <p>Scaling with Wandall Technologies Dedicated Capacity Solutions and Partnerships</p>
           <p
             className='p'
@@ -250,7 +251,7 @@ function Home() {
 
       <section className='contacts section' data-aos="fade-up" ref={contactRef}>
         <h1>Get in touch</h1>
-        <p>Call us at +254-740-537-57 for any assistance</p>
+        <p>Call us at +254-740-537-572 for any assistance</p>
         <p>Email us at info@wandalltechnologies.com and we'll get back to you</p>
       </section>
 
