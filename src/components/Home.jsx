@@ -12,6 +12,9 @@ import Inventory from './Inventory';
 import internetplansicon from '../assets/internetplanicon.jpg';
 import security from '../assets/security.jpg';
 import homesolar from '../assets/homesolar.jpg';
+import futureready from '../assets/futureready.jpeg';
+import kawifi2 from '../assets/kawifi2.png';
+import banddeals from '../assets/banddeals.jpeg';
 
 function Home() {
   const navigate = useNavigate();
@@ -231,24 +234,32 @@ function Home() {
 
       <section className='section' data-aos="fade-up">
         <h1 className='header'>The Wandall Technologies Difference</h1>
-        <div className='three-cubes-container'>
-          {[
-            'Home internet with 99% reliability',
-            'Best Bandwidth Deals for Small Scale Clients',
-            'Future-ready Developments'
-          ].map((title, index) => (
-            <div key={index} className='three-cubes'>
-              <img src={wifi} alt="wifi icon" className="logo" />
-              <h1>{title}</h1>
-              <p>{index === 0
-                ? 'Everyone in your home can stream, game and meet with confidence.'
-                : index === 1
-                  ? 'Outreaching communities via links across the country.'
-                  : 'Smart Homes via IOT solutions and structured cabling.'}
-              </p>
-            </div>
-          ))}
-        </div>
+      </section>
+
+       <section className='three-cubes-container section' data-aos="fade-up">
+        {[
+          {
+            img: kawifi2,
+            title: 'Home internet with 99% reliability',
+            text: 'Everyone in your home can stream, game and meet with confidence.'
+          },
+          {
+            img: banddeals,
+            title: 'Best Bandwidth Deals for Small Scale Clients',
+            text: 'Outreaching communities via links across the country.'
+          },
+          {
+            img: futureready,
+            title: 'Future-ready Developments',
+            text: 'Smart Homes via IOT solutions and structured cabling.'
+          }
+        ].map((item, idx) => (
+          <div key={idx} className='three-cubes' onClick={handleNavigate(item.link)} style={{ cursor: 'pointer' }}>
+            <img src={item.img} alt={item.title} className="logo" />
+            <h1>{item.title}</h1>
+            <p>{item.text}</p>
+          </div>
+        ))}
       </section>
 
       <section className='contacts section' data-aos="fade-up" ref={contactRef}>
