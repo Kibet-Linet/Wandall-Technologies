@@ -2,12 +2,12 @@ import { useState } from 'react';
 import '../css/internetplans.css';
 
 const plans = [
-  { name: 'Student', price: 1999, speed: '7 Mbps' },
-  { name: 'Bronze', price: 2499, speed: '10 Mbps' },
+  { name: 'Student', price: 1599, speed: '7 Mbps' },
+  { name: 'Bronze', price: 1999, speed: '10 Mbps' },
   { name: 'Silver', price: 2999, speed: '15 Mbps' },
   { name: 'Gold', price: 3499, speed: '20 Mbps' },
   { name: 'Diamond', price: 4499, speed: '30 Mbps' },
-  { name: 'Platinum', price: 6499, speed: '40 Mbps' },
+  { name: 'Platinum', price: 6499, speed: '50 Mbps' },
 ];
 
 function InternetPlans() {
@@ -104,13 +104,13 @@ const [formData, setFormData] = useState(initialFormState);
      )}
 
     <div className="internet-plans-container" data-aos="fade-up">
-      <h2>Choose Your Internet Plan</h2>
+      <h1 className="section-title" data-aos="fade-up">Choose Your Internet Plan</h1>
       <div className="plans-list">
         {plans.map((plan) => (
           <div key={plan.name} className="plan-card">
-            <h2>{plan.name}</h2>
-            <p>Price: KES {plan.price}</p>
-            <p>Speed: {plan.speed}</p>
+            <h2><b>{plan.name}</b></h2>
+            <h1><b>{plan.speed}</b></h1>
+            <h3><b>KES {plan.price}/month</b></h3>
             <button onClick={() => handleGetConnected(plan.name)}>Get Connected</button>
           </div>
         ))}
