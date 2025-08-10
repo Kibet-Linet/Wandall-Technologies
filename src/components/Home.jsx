@@ -14,7 +14,7 @@ import security from '../assets/security.jpg';
 import homesolar from '../assets/homesolar.jpg';
 import futureready from '../assets/futureready.jpeg';
 import kawifi2 from '../assets/kawifi2.png';
-import banddeals from '../assets/banddeals.jpeg';
+import banddeals from '../assets/banddeals.jpeg'; 
 
 function Home() {
   const navigate = useNavigate();
@@ -232,11 +232,8 @@ function Home() {
         </div>
       </section>
 
-      <section className='section' data-aos="fade-up">
-        <h1 className='header'>The Wandall Technologies Difference</h1>
-      </section>
-
-       <section className='three-cubes-container section' data-aos="fade-up">
+      <h1 className="section-title" data-aos="fade-up">The Wandall Technologies Difference</h1>
+      <section className='three-cubes-container section' data-aos="fade-up">
         {[
           {
             img: kawifi2,
