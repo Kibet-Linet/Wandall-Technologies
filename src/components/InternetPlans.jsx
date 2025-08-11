@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import '../css/internetplans.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const plans = [
   { name: 'Student', price: 1599, speed: '7 Mbps' },
@@ -111,6 +113,12 @@ const [formData, setFormData] = useState(initialFormState);
             <h2><b>{plan.name}</b></h2>
             <h1><b>{plan.speed}</b></h1>
             <h3><b>KES {plan.price}/month</b></h3>
+            <ul className="custom-icon-list-internet-plans">
+                          <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Unlimited Data</li>
+                          <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> 24/7 Customer Support</li>
+                          <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Free Installation</li>
+                          <li><FontAwesomeIcon icon={faCheckCircle} className="tick-icon" /> Complementary Router</li>
+            </ul>
             <button onClick={() => handleGetConnected(plan.name)}>Get Connected</button>
           </div>
         ))}

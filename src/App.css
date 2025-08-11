@@ -318,6 +318,19 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+.custom-icon-list-internet-plans {
+  list-style: none;       /* Removes dots */
+  padding-left: 0;        /* Removes indent */
+  margin: 0;
+}
+
+.custom-icon-list-internet-plans li {
+  display: flex;          /* Places icon and text in a row */
+  align-items: center;    /* Vertically centers them */
+  margin-bottom: 0.5rem;
+  margin-left: 30px; /* Adjusts left margin for better alignment */
+}
+
 .tick-icon {
   color: rgb(255, 60, 0);          /* Your preferred icon color */
   margin-right: 8px;      /* Space between icon and text */
